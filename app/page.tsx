@@ -146,7 +146,7 @@ export default function Home() {
 
         <a
           className='text-blue-500 hover:underline'
-          href='http://example.com/'>Githubリポジトリはこちら</a>
+          href='https://github.com/PenguinCabinet/Aiueo-sort-with-Kanji-reading'>Githubリポジトリはこちら</a>
       </pre>
     </main>
   )
