@@ -158,7 +158,7 @@ export default function Home() {
 
 
       <pre>
-
+        本ツールの使用で何かしらの損害が発生しても、筆者は一切の責任を負いません。バグが存在しないことを保証するものではありません。
         <a
           className='text-blue-500 hover:underline'
           href='https://github.com/PenguinCabinet/Aiueo-sort-with-Kanji-reading'>Githubリポジトリはこちら</a>
