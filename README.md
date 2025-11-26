@@ -2,6 +2,6 @@
 
 ![img](public/img.png)
 
-形態素解析器「[kuroshiro](https://www.npmjs.com/package/kuroshiro)」を使って、漢字の読みを考慮した上で、文字列をあいうえお順にソートするツールです。
+形態素解析器「[kuroshiro](https://www.npmjs.com/package/kuroshiro) +[kuromoji](https://github.com/hexenq/kuroshiro-analyzer-kuromoji)」を使って、漢字の読みを考慮した上で、文字列をあいうえお順にソートするツールです。
 
 既存のサービスが、漢字の読みを考慮せず、(おそらく)文字コードだけ見てソートしていたので作りました。
