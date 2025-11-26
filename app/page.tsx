@@ -74,7 +74,7 @@ export default function Home() {
       >漢字の読みを考慮した、あいうえお順ソートツール</h1>
 
       <h2 className='text-2xl font-bold text-heading my-3'>
-        ソートしたいデータ</h2>
+        ソートする文字列</h2>
 
       <textarea
         rows={6}
@@ -96,7 +96,7 @@ export default function Home() {
       <div className='my-3'>
         <div className="flex items-center gap-4">
           <h2 className='text-2xl font-bold text-heading'>
-            ソートしたデータの読み方</h2>
+            ソートした文字列の読み方</h2>
           <button type="button"
             onClick={
               () => {
@@ -121,7 +121,7 @@ export default function Home() {
       <div className='my-3'>
         <div className="flex items-center gap-4">
           <h2 className='text-2xl font-bold text-heading'>
-            ソートしたデータ</h2>
+            ソートした文字列</h2>
           <button type="button"
             onClick={
               () => {
