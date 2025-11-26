@@ -157,13 +157,13 @@ export default function Home() {
       </div>
 
 
-      <pre style={{ whiteSpace: "pre-wrap" }} >
-        本ツールの使用で何かしらの損害が発生しても、筆者は一切の責任を負いません。
-        バグが存在しないことを保証するものではありません。
+      <div style={{ whiteSpace: "pre-wrap" }} >
+        本ツールの使用で何かしらの損害が発生しても、筆者は一切の責任を負いません。<br />
+        バグが存在しないことを保証するものではありません。<br />
         <a
           className='text-blue-500 hover:underline'
-          href='https://github.com/PenguinCabinet/Aiueo-sort-with-Kanji-reading'>Githubリポジトリはこちら</a>
-      </pre>
+          href='https://github.com/PenguinCabinet/Aiueo-sort-with-Kanji-reading'>Githubリポジトリはこちら</a><br />
+      </div>
     </main>
   )
 }
