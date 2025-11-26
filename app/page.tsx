@@ -157,7 +157,7 @@ export default function Home() {
       </div>
 
 
-      <pre>
+      <pre style={{ whiteSpace: "pre-wrap" }} >
         本ツールの使用で何かしらの損害が発生しても、筆者は一切の責任を負いません。
         バグが存在しないことを保証するものではありません。
         <a
