@@ -1,28 +1,43 @@
 'use client'
 import { useCallback, useEffect, useState } from 'react'
 import Image from "next/image"
+//@ts-ignore
 import Kuroshiro from "kuroshiro"
+//@ts-ignore
 import KuromojiAnalyzer from "kuroshiro-analyzer-kuromoji"
 import "./globals.css"
 import 'material-symbols'
 
-async function sort_func(kuroshiro, x) {
+async function sort_func(kuroshiro: any, x: string) {
   const x_arr = x
     .split("\n")
-    .filter((e) => e != "")
+    .filter((e: string) => e != "")
   const yomigana_x_arr = await Promise.all(
-    x_arr.map(async (e) => {
+    x_arr.map(async (e: string) => {
       return kuroshiro.convert(e, { to: "hiragana" })
     })
   )
 
-  let yomigana_x_index_arr = yomigana_x_arr.map((e, i) => [i, e])
+  let yomigana_x_index_arr = yomigana_x_arr.map((e: string, i: number) => {
+    return {
+      index: i,
+      elem: e
+    }
+  })
 
-  yomigana_x_index_arr.sort((a, b) => a[1].localeCompare(b[1], 'ja'))
+  yomigana_x_index_arr.sort((
+    a: {
+      index: number;
+      elem: string;
+    },
+    b: {
+      index: number;
+      elem: string;
+    }) => a.elem.localeCompare(b.elem, 'ja'))
 
   return {
-    yomigana: yomigana_x_index_arr.map((e) => e[1]).join("\n"),
-    result: yomigana_x_index_arr.map((e) => x_arr[e[0]]).join("\n"),
+    yomigana: yomigana_x_index_arr.map((e) => e.elem).join("\n"),
+    result: yomigana_x_index_arr.map((e) => x_arr[e.index]).join("\n"),
   }
 
 }
@@ -53,7 +68,7 @@ export default function Home() {
 `
 
   useEffect(() => {
-    kuroshiro.init(new KuromojiAnalyzer({ dictPath: "/dict" })).then((e) => {
+    kuroshiro.init(new KuromojiAnalyzer({ dictPath: "/dict" })).then((e: any) => {
 
       sort_func(kuroshiro, placeholder).then((placeholder_result) => {
         console.log(placeholder_result)
@@ -80,7 +95,7 @@ export default function Home() {
         rows={6}
         className='bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full p-3.5 shadow-xs placeholder:text-body'
         onChange={
-          (e) => {
+          (e: React.ChangeEvent<HTMLTextAreaElement>) => {
             const f = async () => {
               const result = await sort_func(kuroshiro, e.target.value)
               setOut_yomigana(
